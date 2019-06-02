@@ -67,7 +67,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="code\venders\ReturnService.asmx" />
     <Content Include="ComponentService.asmx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -77,8 +76,6 @@
     <Compile Include="code\dataBase\models\Component.cs" />
     <Compile Include="code\dataBase\models\subModels\CompPrice.cs" />
     <Compile Include="code\DOMUtils.cs" />
-    <Compile Include="code\SimpleDatabaseLogger.cs" />
-    <Compile Include="code\dataBase\AuthenticationKeyHandler.cs" />
     <Compile Include="code\venders\MouserJSON\MouserAlternatePackagingReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserErrorsReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserMouserPartReturnJSON.cs" />
@@ -89,18 +86,12 @@
     <Compile Include="code\venders\MouserJSON\MouserSearchResultsReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserUnitWeightKgReturnJSON.cs" />
     <Compile Include="code\venders\seviceProviders\MouserServiceProvider.cs" />
-    <Compile Include="code\venders\DigikeyAuthHandler.cs" />
-    <Compile Include="code\venders\ReturnService.asmx.cs">
-      <DependentUpon>ReturnService.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="code\venders\seviceProviders\RSOnlineServiceProvider.cs" />
     <Compile Include="code\venders\seviceProviders\VenderServiceProvider.cs" />
     <Compile Include="ComponentService.asmx.cs">
       <DependentUpon>ComponentService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
