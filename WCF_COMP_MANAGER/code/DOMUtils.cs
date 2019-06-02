@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Cache;
 using System.Text;
 using System.Web;
 
@@ -10,11 +11,12 @@ namespace WCF_COMP_MANAGER.code
 {
     public class DOMUtils
     {
-        public static HtmlDocument getDOMFromLink(String link)
+        public static HtmlDocument getDOMFromLink(String link, String accept = "*/*")
         {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(link);
             httpWebRequest.Method = "GET";
             httpWebRequest.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36";
+            httpWebRequest.Accept = accept;
 
             HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse();
 

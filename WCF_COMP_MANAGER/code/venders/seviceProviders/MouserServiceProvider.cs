@@ -17,7 +17,7 @@ namespace WCF_COMP_MANAGER.code.venders
 {
     public class MouserServiceProvider : VenderServiceProvider
     {
-        public static String VenderName
+        public static new String VenderName
         {
             get { return "Mouser"; }
         }
@@ -91,7 +91,7 @@ namespace WCF_COMP_MANAGER.code.venders
             if (part.Length < 4) return null;
             if (!part[2].Contains("mouser")) return null;
 
-            HtmlAgilityPack.HtmlDocument dom = DOMUtils.getDOMFromLink(link);
+            HtmlAgilityPack.HtmlDocument dom = DOMUtils.getDOMFromLink(link, null);
 
             HtmlNode someNode = dom.GetElementbyId("spnMouserPartNumFormattedForProdInfo");
 

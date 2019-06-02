@@ -172,7 +172,7 @@ namespace WCF_COMP_MANAGER.code.dataBase.models
                                                     "verderComponentNumber = @verderComponentNumber, " +
                                                     "prices = @prices, " +
                                                     "link = @link, " +
-                                                    "checkedAt = @checkedAt" +
+                                                    "checkedAt = @checkedAt " +
                                                 "WHERE id = @id", con);
             cmd.Parameters.AddWithValue("@id", comp.Id);
             cmd.Parameters.AddWithValue("@name", comp.Name);

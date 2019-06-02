@@ -32,5 +32,11 @@ namespace WCF_COMP_MANAGER
             if (vender == null) return null;
             return vender.getComponentFromNumber(vendernumber);
         }
+
+        [WebMethod]
+        public List<String> GetSupportedVenders()
+        {
+            return VenderServiceProvider.getAllVenderNames();
+        }
     }
 }

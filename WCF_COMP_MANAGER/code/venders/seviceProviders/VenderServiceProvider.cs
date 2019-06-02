@@ -18,7 +18,8 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
         private static Dictionary<string, VenderServiceProvider> venders = new Dictionary<string, VenderServiceProvider>
         {
             {MouserServiceProvider.VenderName.ToLower(), new MouserServiceProvider() },
-            {RSOnlineServiceProvider.VenderName.ToLower(), new RSOnlineServiceProvider() }
+            {RSOnlineServiceProvider.VenderName.ToLower(), new RSOnlineServiceProvider() },
+            {DigiKeyServiceProvider.VenderName.ToLower(), new DigiKeyServiceProvider() }
         };
 
         public static VenderServiceProvider getVenderFromName(String name)
@@ -28,6 +29,16 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
                 return venders[name.ToLower()];
             }
             return null;
+        }
+
+        public static List<String> getAllVenderNames()
+        {
+            List<String> ret = new List<string>();
+            foreach (KeyValuePair<string, VenderServiceProvider> entry in venders)
+            {
+                ret.Add(entry.Key);
+            }
+            return ret;
         }
         public static Component getComponentFromLink(String link)
         {

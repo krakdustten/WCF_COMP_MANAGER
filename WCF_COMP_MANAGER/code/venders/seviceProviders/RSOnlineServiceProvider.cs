@@ -10,7 +10,7 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
 {
     public class RSOnlineServiceProvider : VenderServiceProvider
     {
-        public static String VenderName
+        public static new String VenderName
         {
             get { return "RSOnline"; }
         }
@@ -93,6 +93,10 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
 
         public override string getComponentNumberFromLink(string link)
         {
+            String[] part = link.Split('/');
+            if (part.Length < 4) return null;
+            if (!part[2].Contains("rs-online")) return null;
+
             HtmlDocument dom = DOMUtils.getDOMFromLink(link);
             HtmlNode genInfo = dom.GetElementbyId("pagecell");
             if (genInfo == null) return null;
