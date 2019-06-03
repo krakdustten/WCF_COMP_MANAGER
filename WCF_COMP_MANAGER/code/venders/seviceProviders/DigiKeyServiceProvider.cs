@@ -29,7 +29,7 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
             if (!excists) comp = new Component();
 
 
-            HtmlDocument dom = DOMUtils.getDOMFromLink("https://www.digikey.be/products/nl?keywords=" + number);
+            HtmlDocument dom = DOMUtils.getDOMFromLink("https://www.digikey.be/products/nl?keywords=" + number, "text/html");
 
             addInfoToComp(comp, dom);
             comp.Vendername = VenderName;
@@ -51,11 +51,22 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
             if (part.Length < 4) return null;
             if (!part[2].Contains("digikey")) return null;
 
-            HtmlAgilityPack.HtmlDocument dom = DOMUtils.getDOMFromLink(link);
+            HtmlAgilityPack.HtmlDocument dom = DOMUtils.getDOMFromLink(link, "text/html");
 
             HtmlNode someNode = dom.GetElementbyId("reportPartNumber");
             if (someNode == null)
-                return null;
+            {
+                HtmlNode c1 = dom.GetElementbyId("product-overview");
+                if (c1 == null) return null;
+                HtmlNode c2 = DOMUtils.getNextChildNodeType(c1, "tbody", 0);
+                if (c2 == null) c2 = c1;
+                HtmlNode c3 = DOMUtils.getNextChildNodeType(c2, "tr", 0);
+                if (c3 == null) return null;
+                HtmlNode c4 = DOMUtils.getNextChildNodeType(c3, "td", 0);
+                if (c4 == null) return null;
+                someNode = DOMUtils.getNextChildNodeType(c4, "meta", 0);
+                if (someNode == null) return null;
+            }
             return someNode.InnerText.Trim(new char[] { '\r', '\t', '\n', ' ' });
         }
 

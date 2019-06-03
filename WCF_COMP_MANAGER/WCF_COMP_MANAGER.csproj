@@ -82,6 +82,10 @@
     <Compile Include="code\dataBase\models\Component.cs" />
     <Compile Include="code\dataBase\models\subModels\CompPrice.cs" />
     <Compile Include="code\DOMUtils.cs" />
+    <Compile Include="code\venders\FarnellJSON\FarnellkeywordSearchReturnJSON.cs" />
+    <Compile Include="code\venders\FarnellJSON\FarnellPriceJSON.cs" />
+    <Compile Include="code\venders\FarnellJSON\FarnellProductJSON.cs" />
+    <Compile Include="code\venders\FarnellJSON\FarnellProductSearchReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserAlternatePackagingReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserErrorsReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserMouserPartReturnJSON.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="code\venders\MouserJSON\MouserSearchPartReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserSearchResultsReturnJSON.cs" />
     <Compile Include="code\venders\MouserJSON\MouserUnitWeightKgReturnJSON.cs" />
+    <Compile Include="code\venders\seviceProviders\FarnellServiceProvider.cs" />
     <Compile Include="code\venders\seviceProviders\DigiKeyServiceProvider.cs" />
     <Compile Include="code\venders\seviceProviders\MouserServiceProvider.cs" />
     <Compile Include="code\venders\seviceProviders\RSOnlineServiceProvider.cs" />

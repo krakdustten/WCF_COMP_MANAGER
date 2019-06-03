@@ -19,7 +19,8 @@ namespace WCF_COMP_MANAGER.code.venders.seviceProviders
         {
             {MouserServiceProvider.VenderName.ToLower(), new MouserServiceProvider() },
             {RSOnlineServiceProvider.VenderName.ToLower(), new RSOnlineServiceProvider() },
-            {DigiKeyServiceProvider.VenderName.ToLower(), new DigiKeyServiceProvider() }
+            {DigiKeyServiceProvider.VenderName.ToLower(), new DigiKeyServiceProvider() },
+            {FarnellServiceProvider.VenderName.ToLower(), new FarnellServiceProvider() }
         };
 
         public static VenderServiceProvider getVenderFromName(String name)

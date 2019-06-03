@@ -16,7 +16,7 @@ namespace WCF_COMP_MANAGER.code
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(link);
             httpWebRequest.Method = "GET";
             httpWebRequest.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36";
-            httpWebRequest.Accept = accept;
+            httpWebRequest.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
             HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse();
 

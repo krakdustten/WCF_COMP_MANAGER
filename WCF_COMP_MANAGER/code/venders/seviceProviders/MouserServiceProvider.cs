@@ -33,7 +33,7 @@ namespace WCF_COMP_MANAGER.code.venders
                     return comp;
                 excists = true;
             }
-                
+            if (!excists) comp = new Component();
 
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.mouser.com/api/V1/search/partnumber?apiKey=5e08dd87-13f3-444a-b64e-b91bc4cc2175");
             httpWebRequest.ContentType = "application/json";
@@ -60,7 +60,7 @@ namespace WCF_COMP_MANAGER.code.venders
             if (mspr.SearchResults.Parts.Count <= 0) return comp;
             MouserMouserPartReturnJSON part = mspr.SearchResults.Parts[0];
 
-            if(!excists) comp = new Component();
+            
             comp.Name = part.ManufacturerPartNumber;
             comp.Manufacturer = part.Manufacturer;
             comp.ManufacturerNumber = part.ManufacturerPartNumber;
