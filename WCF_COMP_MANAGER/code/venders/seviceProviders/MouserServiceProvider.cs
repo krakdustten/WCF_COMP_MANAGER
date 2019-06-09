@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -71,7 +72,7 @@ namespace WCF_COMP_MANAGER.code.venders
             {
                 CompPrice cp = new CompPrice();
                 cp.Amount = price.Quantity;
-                cp.Price = double.Parse(price.Price.Remove(price.Price.Length - 1));
+                cp.Price = double.Parse(price.Price.Remove(price.Price.Length - 1).Replace(',', '.'), CultureInfo.InvariantCulture);
                 comp.Prices.Add(cp);
             }
             comp.Link = part.ProductDetailUrl;
